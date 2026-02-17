@@ -34,8 +34,28 @@ new_arr = [-ele if ele % 2 == 0 else ele for ele in new_arr]
 print(new_arr)
 
 # 두 배열 참고해서 새로운 배열 만들기
-arr1 = [100, 200, 300]
+arr1 = [100, 200, 300, 400]
 arr2 = [1, 2, 3]
 
-arr3 = [i for i in range(len(arr1))]
-print(arr3)
+# arr3 = [arr1[i] + arr2[i] for i in range(len(arr1))]
+# print(arr3)
+
+arr4 = [el1 + el2 for el1 in arr2 for el2 in arr1]
+print(arr4)
+
+arr4 = []
+for idx1, value1 in enumerate(arr2):
+  for idx2, value2 in enumerate(arr1):
+    arr4.append(value1 + value2)
+print(arr4)
+
+# times_table = int(input('몇 단을 출력할까요?'))
+# num = int(input('몇 까지 곱해 볼까요?'))
+# for i in range(num):
+#   print(f'{times_table} x {i + 1} = {times_table * (i + 1)}')
+#  2 * 1, 3 * 1, 4 * 1
+num = int(input('몇 단까지 출력 할 까요?'))
+for idx1 in range(1, 10):
+  for idx2 in range(2, num + 1):
+    print(f'{idx2} x {idx1} = {idx2 * idx1:2d}', end=' ')
+  print()
