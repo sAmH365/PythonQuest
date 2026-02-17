@@ -49,13 +49,37 @@ for idx1, value1 in enumerate(arr2):
     arr4.append(value1 + value2)
 print(arr4)
 
+# ====== gugu class =====
 # times_table = int(input('몇 단을 출력할까요?'))
 # num = int(input('몇 까지 곱해 볼까요?'))
 # for i in range(num):
 #   print(f'{times_table} x {i + 1} = {times_table * (i + 1)}')
 #  2 * 1, 3 * 1, 4 * 1
-num = int(input('몇 단까지 출력 할 까요?'))
+# num = int(input('몇 단까지 출력 할 까요?'))
+num = 4
 for idx1 in range(1, 10):
   for idx2 in range(2, num + 1):
-    print(f'{idx2} x {idx1} = {idx2 * idx1:2d}', end=' ')
+    print(f'{idx2} x {idx1} = {idx2 * idx1:2d}', end='\t')
   print()
+
+print('\n 2차원 배열 생성 =======================')
+# 2차원 배열 생성
+# 0 으로 초기화된 N * M 2차원 배열 만들기(N 행 M열)
+N, M = 3, 5
+arr_2D = []
+
+for i in range(N):
+  row = []
+  for j in range(M):
+    row.append(0)
+  arr_2D.append(row)
+print(arr_2D)
+
+print()
+print('2차원 배열 쉽게 출력하는 법  *배열, sep="\\n"')
+# 2차원 배열 쉽게 출력하는 법
+# *배열
+print(*arr_2D, sep='\n')
+
+print('\n 2차원 배열 생성 (리스트컴프리헨션) =======================')
+N, M = 3, 5
