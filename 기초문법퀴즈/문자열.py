@@ -39,3 +39,8 @@ print(s[-1])
 print(s[1:3]) # 녕하   -> 마지막 인덱스는 포함 안함
 print(s[:4]) # 안녕하세
 print(s[3:]) # 세요
+
+print('\n f-string =======================')
+name = 'kwon'
+str = f'name = {name}'
+print(str)
