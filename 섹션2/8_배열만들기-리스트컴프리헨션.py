@@ -33,7 +33,7 @@ print(new_arr)
 new_arr = [-ele if ele % 2 == 0 else ele for ele in new_arr]
 print(new_arr)
 
-# 두 배열 참고해서 새로운 배열 만들기
+print('\n두 배열 참고해서 새로운 배열 만들기===================')
 arr1 = [100, 200, 300, 400]
 arr2 = [1, 2, 3]
 
@@ -49,7 +49,7 @@ for idx1, value1 in enumerate(arr2):
     arr4.append(value1 + value2)
 print(arr4)
 
-# ====== gugu class =====
+print('\n gugu class===================')
 # times_table = int(input('몇 단을 출력할까요?'))
 # num = int(input('몇 까지 곱해 볼까요?'))
 # for i in range(num):
@@ -82,5 +82,6 @@ print('2차원 배열 쉽게 출력하는 법  *배열, sep="\\n"')
 print(*arr_2D, sep='\n')
 
 print('\n 2차원 배열 생성 (리스트컴프리헨션) =======================')
-N, M = 3, 5
-
+N, M = 6, 5
+arr_2D = [ [0 for _ in range(M)] for _ in range(N)]
+print(*arr_2D, sep = '\n')
