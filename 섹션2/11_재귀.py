@@ -84,3 +84,21 @@ def is_palindrome(s):
 
 res = is_palindrome('ab101ba')
 print(res)
+
+print('\n중첩된 리스트 풀기 ====================')
+#중첩된 리스트 주어짐 -> 내부괄호 모두 풀어 중첩 없는 리스트 반환
+# input: [1, [2,3,4], [5,6,[7,8]]]
+# output: [1, 2, 3, 4, 5, 6, 7, 8]
+
+def unpack_list(nested_list, unpacks = []):
+  for el in nested_list:
+    if type(el) == list:
+      unpack_list(el, unpacks)
+    else:
+      unpacks.append(el)
+
+  return unpacks
+
+inputs = [1, [2,3,4], [5,6,[7,8]]]
+# inputs = [1, [2, 3]]
+print(unpack_list(inputs))
