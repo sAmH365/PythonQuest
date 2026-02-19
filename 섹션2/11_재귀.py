@@ -37,3 +37,19 @@ def fibo(n):
   return cur_n
 
 print(fibo(100))
+
+print('\n진법 변환====================')
+def trans(target, formation):
+  chars = "0123456789ABCDEF"
+
+  share = target // formation
+  remain = target % formation
+
+  if share == 0:
+    return chars[remain]
+
+  cur_trans = trans(share, formation)
+
+  return str(cur_trans) + str(chars[remain])
+
+print(trans(258, 2))
