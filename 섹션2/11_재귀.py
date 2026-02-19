@@ -102,3 +102,22 @@ def unpack_list(nested_list, unpacks = []):
 inputs = [1, [2,3,4], [5,6,[7,8]]]
 # inputs = [1, [2, 3]]
 print(unpack_list(inputs))
+
+def flatten(l):
+  if not isinstance(l, list):
+    return [l]
+
+  res = []
+  for item in l:
+    res += flatten(item)
+  return res
+
+
+def mult_two(n):
+  j = 1
+  while j * 2 <= n:
+    print(j)
+    j *= 2
+  return j
+
+print(mult_two(18))
