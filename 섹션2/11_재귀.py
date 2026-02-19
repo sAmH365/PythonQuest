@@ -38,7 +38,7 @@ def fibo(n):
 
 print(fibo(100))
 
-print('\n진법 변환====================')
+print('\n진법 변환 ====================')
 def trans(target, formation):
   chars = "0123456789ABCDEF"
 
@@ -53,3 +53,34 @@ def trans(target, formation):
   return str(cur_trans) + str(chars[remain])
 
 print(trans(258, 2))
+
+print('\n회문구조 판별 ====================')
+def palindrome(text, idx=0):
+  text = text.upper()
+  if idx == len(text) // 2:
+    return True
+
+  print(idx, text[idx], text[-(idx + 1)])
+
+  if text[idx] == text[-(idx + 1)]:
+    return palindrome(text, idx + 1)
+  else:
+    return False
+
+test = 'ab101ba'
+print(len(test))
+print(palindrome(test))
+
+def is_palindrome(s):
+  if len(s) <= 1:
+    return True
+
+  print(s, s[1:-1])
+
+  if s[0] != s[-1]:
+    return False
+  else:
+    return is_palindrome(s[1:-1])
+
+res = is_palindrome('ab101ba')
+print(res)
