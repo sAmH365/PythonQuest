@@ -48,7 +48,7 @@ def manual_permutations(arr, r):
       if not visited[i]:  # 방문하지 않았다면
         visited[i] = True  # [선택]
         backtrack(current_path + [arr[i]])
-        visited[i] = False  # [복구] 다음 경우의 수를 위해 해제!
+        visited[i] = False  # [복구] 다음 경우의 수를 위해 해제
 
   backtrack([])
   return results
