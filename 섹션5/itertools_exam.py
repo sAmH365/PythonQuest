@@ -33,3 +33,24 @@ def manual_permutations(arr, r):
 my_arr = [1, 2, 3, 4]
 result = manual_permutations(my_arr, 4)
 print(result)
+
+
+def manual_permutations(arr, r):
+  results = []
+  visited = [False] * len(arr)  # 방문 체크 배열 생성
+
+  def backtrack(current_path):
+    if len(current_path) == r:
+      results.append(tuple(current_path))
+      return
+
+    for i in range(len(arr)):
+      if not visited[i]:  # 방문하지 않았다면
+        visited[i] = True  # [선택]
+        backtrack(current_path + [arr[i]])
+        visited[i] = False  # [복구] 다음 경우의 수를 위해 해제!
+
+  backtrack([])
+  return results
+
+print(manual_permutations(my_arr, 4))
