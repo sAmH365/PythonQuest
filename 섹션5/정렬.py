@@ -1,5 +1,16 @@
 import random
 
+def print_depth(depth, mode, start, end):
+  indent = ' ' * depth
+
+  if mode == 'call':
+    print(f"{indent}▶ 호출: 영역[{start}~{end}]")
+  else:
+    print(f"{indent}◀ 복귀: 영역[{start}~{end}]")
+
+
+
+
 print('=================버블정렬==================')
 test_arr = random.sample(range(1, 10), 4)
 print(test_arr)
@@ -39,7 +50,8 @@ def insertion_sort(arr):
 print(insertion_sort(test_arr1))
 
 print('\n=================병합정렬==================')
-test_arr2 = random.sample(range(1, 51), 20)
+# test_arr2 = random.sample(range(1, 51), 20)
+test_arr2 = [64, 34, 25, 12, 90, 22, 14]
 print(test_arr2)
 def merge_sort(arr, left, right) -> list:
   if left >= right:
@@ -79,14 +91,16 @@ def merge(arr, left, mid, right):
 print(*merge_sort(test_arr2, 0, len(test_arr2) - 1))
 
 print('\n=================퀵정렬==================')
-test_arr3 = random.sample(range(1, 51), 20)
+test_arr3 = random.sample(range(1, 10), 5)
 print(test_arr3)
 
-def quick_sort(arr, left, right):
-  if left < right:
-    pi = partition(arr, left, right)
-    quick_sort(arr, left, pi - 1)
-    quick_sort(arr, pi + 1, right)
+def quick_sort(arr, left, right, level = 0):
+  if left >= right:
+    return arr
+
+  pi = partition(arr, left, right)
+  quick_sort(arr, left, pi - 1, level + 1)
+  quick_sort(arr, pi + 1, right, level + 1)
 
   return arr
 
