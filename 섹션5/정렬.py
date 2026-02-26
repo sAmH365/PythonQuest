@@ -1,6 +1,24 @@
 import random
 
-print('=================삽입정렬==================')
+print('=================버블정렬==================')
+test_arr = random.sample(range(1, 10), 4)
+print(test_arr)
+
+def bubble_sort(arr):
+  n = len(arr)
+
+  for i in range(n):
+    for j in range(0, n - i - 1):
+      if arr[j] > arr[j + 1]:
+        arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+  return arr
+
+print(*bubble_sort(test_arr))
+
+
+
+print('\n=================삽입정렬==================')
 test_arr1 = random.sample(range(1, 51), 20)
 print(test_arr1)
 def insertion_sort(arr):
